@@ -48,4 +48,8 @@ class Visitor < ApplicationRecord
   end
 
 
+  def self.delete_all_older_than(timestamp)
+    destroy_by("created_at < ?", timestamp)
+  end
+
  end
