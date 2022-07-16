@@ -5,7 +5,7 @@ module TrackEvent
     Current.visitor.events.create(
       path: request.path,
       method: request.method,
-      params: event_params
+      params: filter_sensitive_data(event_params)
     )
   end
 
